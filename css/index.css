@@ -1,0 +1,83 @@
+body {
+    background-image : url(../Imagenes/fondo-1.png);
+    background-size:cover;
+}
+
+.navbar-dark .navbar-nav .nav-link:hover {
+    color: goldenrod;
+  }
+
+.carousel-item img {
+    border-radius: 10px;
+}
+
+h2 {
+    color: white;
+    font-size: 2.5rem;
+}
+
+.card-title {
+    font-size: 1.5rem;
+}
+
+#bestSellersIndicators button {
+    width: 50px;
+    height: 8px;
+    border-radius: 4px;
+    margin: 0 6px;
+    background-color: rgba(255, 255, 255, 0.3);
+    border: none;
+    transition: background-color .3s;
+  }
+
+.btn-primary {
+    background-color: goldenrod;
+    border-color: goldenrod;
+  }
+
+.btn-primary:hover {
+    background-color: #f0c14b;
+    border-color: #f0c14b;
+  }
+
+  footer .nav-link:hover {
+    color: #ffc107 !important;
+  }
+  footer .bi:hover {
+    color: #ffc107 !important;
+
+  }
+
+  .card {
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .card-img {
+    object-fit: cover;
+    height: 200px; 
+    transition: transform 0.3s ease, filter 0.3s ease;
+  }
+  
+  .card-img-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5); 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    opacity: 0; 
+    transition: opacity 0.3s ease;
+  }
+  
+  .card:hover .card-img {
+    transform: scale(1.1); 
+  }
+  
+  .card:hover .card-img-overlay {
+    opacity: 1; 
+  }
