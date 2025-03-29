@@ -1,0 +1,62 @@
+/* Set the background color of the entire page to black */
+body {
+    background-image : url(../Imagenes/fondo-1.png);
+    background-size:cover;
+}
+
+
+.container {
+    background-color: #fff;
+    color: #000;
+    border-radius: 15px;
+    padding: 50px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    max-width: 1000px;
+    width: 90%;
+    margin: 20px auto;
+  }
+  
+  h2, .form-label {
+    color: #000;
+  }
+  
+  .form-control, .form-select, textarea {
+    background-color: #f9f9f9;
+    color: #000;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .form-control:focus, .form-select:focus, textarea:focus {
+    background-color: #fff;
+    border-color: rgb(0, 0, 0);
+    outline: none;
+  }
+
+.btn-primary {
+  background-color: rgb(252, 187, 22);
+  border-color: goldenrod;
+  color: #fff;
+  border-radius: 5px;
+}
+
+.btn-primary:hover {
+  background-color: #f0c14b;
+    border-color: #f0c14b;
+}
+
+.btn-primary:focus {
+    background-color: #f0c14b;
+      border-color: #f0c14b;
+  }
+
+.link-inicio-sesion a {
+    text-decoration: none;
+    font-weight: bold;
+    color: rgb(235, 173, 14);
+  }
+  
+  .link-inicio-sesion a:hover {
+    color: black
+  }
+  
