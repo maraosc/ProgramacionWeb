@@ -1,5 +1,48 @@
+body {
+    background-image : url(../Imagenes/fondo-1.png);
+    background-size:cover;
+}
+
 hr {
     border: 1px solid #000;
     margin: 20px 0;
   }
   
+
+.btn-primary {
+background-color: rgb(252, 187, 22);
+border-color: goldenrod;
+color: #fff;
+border-radius: 5px;
+}
+
+.btn-primary:hover {
+background-color: #f0c14b;
+    border-color: #f0c14b;
+}
+
+.btn-primary:focus {
+    background-color: #f0c14b;
+    border-color: #f0c14b;
+}
+
+  .btn-secondary {
+    background-color: #ffb400;
+    border: none;
+  }
+  .btn-secondary:hover {
+    background-color: #e6a500;
+  }
+  .recuperarContraseña a {
+    color: #ffb400;
+    text-decoration: none;
+  }
+  .recuperarContraseña a:hover {
+    text-decoration: underline;
+  }
+
+  h2 {
+    font-size: 2.5rem;
+    color: #ffffff;
+    text-align: center;
+  }
