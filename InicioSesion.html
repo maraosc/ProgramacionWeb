@@ -23,12 +23,12 @@
   </nav>
 
 <!-- Formulario de inicio de sesión -->
-<div class="container my-4 bg-dark text-light p-4 rounded">
-  <h2 class="mb-4">Inicio Sesión de Clientes</h2>
+<div class="container my-5 bg-dark text-light p-4 rounded container-principal">
+  <h2 class="mb-4">Inicio Sesión</h2>
   <div class="row">
     <!-- Clientes Registrados -->
     <div class="col-12 col-lg-6 mb-4">
-      <div class="p-4 border rounded bg-secondary">
+      <div class="p-4 border rounded">
         <h3 class="mb-3">Clientes Registrados</h3>
         <hr class="border-light">
         <p>Si tiene una cuenta, inicie sesión con su dirección de correo electrónico</p>
@@ -45,14 +45,16 @@
             <input type="password" class="form-control" id="contrasena" placeholder="Ingrese su contraseña" required>
             <small class="text-danger" id="error-contrasena"></small>
           </div>
-          <!-- Botón de inicio de sesión -->
-          <button type="submit" class="btn btn-primary">Iniciar Sesión</button>
+          <!-- Olvidó su contraseña -->
+          <p class="recuperarContraseña"><a href="/recuperarContraseña.html">¿Olvidó su contraseña?</a></p>
+          <!-- Botón de inicio de sesió n -->
+          <button type="submit" class="btn btn-secondary">Iniciar Sesión</button>
         </form>
       </div>
     </div>
     <!-- Clientes Nuevos -->
     <div class="col-12 col-lg-6 mb-4">
-      <div class="p-4 border rounded bg-secondary">
+      <div class="p-4 border rounded">
         <h3 class="mb-3">Clientes Nuevos</h3>
         <hr class="border-light">
         <p>
@@ -62,11 +64,135 @@
       </div>
     </div>
   </div>
+
+  <!-- Opción para Administradores -->
+  <div class="text-center mt-4">
+    <p>¿Eres administrador? <a href="admin_login.html" class="text-light">Inicia sesión aquí</a></p>
+  </div>
 </div>
-
-
 
           
 </body>
+
+
+<!-- Footer -->
+<footer>
+  <div class="container-fluid bg-dark text-white pt-5 mb-6">
+    <!-- Newsletter -->
+<!-- Newsletter -->
+<div class="container mb-5">
+  <div class="row align-items-center">
+    <div class="col-12 col-md-6 text-center text-md-start mb-4 mb-md-0">
+      <h4 class="mb-0">Newsletter</h4>
+      <p class="small mb-0">Infórmese de nuestras últimas noticias y ofertas especiales</p>
+    </div>
+
+    <div class="col-12 col-md-6 col-xl-5">
+      <form class="row g-2 align-items-center justify-content-center justify-content-md-start">
+        <div class="col-8 col-sm-9 mt-md-2">
+          <label for="input-email" class="visually-hidden">Email</label>
+          <input type="email" class="form-control" id="input-email" placeholder="Su dirección de correo electrónico">
+        </div>
+        <div class="col-auto">
+          <button type="submit" class="btn btn-primary">Suscribirse</button>
+        </div>
+        <div class="col-12 mt-2">
+          <p class="mb-0 small">Puede darse de baja en cualquier momento. Consulte nuestra información de contacto en el aviso legal.</p>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+    <!-- Links + Social -->
+    <div class="container mb-3">
+      <div class="row gy-4">
+        <div class="col-12 col-md-3">
+          <h5>PRODUCTOS</h5>
+          <nav class="nav flex-column">
+            <a class="nav-link text-white-50 p-0 mb-1" href="#">Ofertas</a>
+            <a class="nav-link text-white-50 p-0 mb-1" href="#">Novedades</a>
+            <a class="nav-link text-white-50 p-0" href="#">Los más vendidos</a>
+          </nav>
+        </div>
+
+        <div class="col-12 col-md-3">
+          <h5>INFORMACIÓN</h5>
+          <nav class="nav flex-column">
+            <a class="nav-link text-white-50 p-0 mb-1" href="#">Sobre nosotros</a>
+            <a class="nav-link text-white-50 p-0 mb-1" href="#">Términos y condiciones</a>
+            <a class="nav-link text-white-50 p-0" href="#">Aviso legal</a>
+          </nav>
+        </div>
+
+        <div class="col-12 col-md-3">
+          <h5>SU CUENTA</h5>
+          <nav class="nav flex-column">
+            <a class="nav-link text-white-50 p-0 mb-1" href="#">Información personal</a>
+            <a class="nav-link text-white-50 p-0 mb-1" href="#">Pedidos</a>
+            <a class="nav-link text-white-50 p-0" href="#">Direcciones</a>
+          </nav>
+        </div>
+
+        <div class="col-12 col-md-3">
+          <h5>SÍGUENOS</h5>
+          <div class="d-flex gap-3">
+            <a href="#" class="text-white fs-4"><i class="bi bi-facebook"></i></a>
+            <a href="#" class="text-white fs-4"><i class="bi bi-twitter"></i></a>
+            <a href="#" class="text-white fs-4"><i class="bi bi-instagram"></i></a>
+            <a href="#" class="text-white fs-4"><i class="bi bi-youtube"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Copyright -->
+    <div class="container text-center pb-3">
+      <p class="my-4 small">© 2025 Estim-Hub. Todos los derechos reservados.</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const formulario = document.getElementById('formulario-inicio-sesion');
+
+formulario.addEventListener('submit', function(event) {
+  event.preventDefault();
+  
+  const nombreUsuario = document.getElementById('nombre-usuario');
+  const contrasena = document.getElementById('contrasena');
+  const errorNombreUsuario = document.getElementById('error-nombre-usuario');
+  const errorContrasena = document.getElementById('error-contrasena');
+
+  // Resetear mensajes de error
+  errorNombreUsuario.textContent = '';
+  errorContrasena.textContent = '';
+
+  let valid = true;
+
+  // Validación del nombre de usuario
+  if (nombreUsuario.value.trim() === '') {
+    errorNombreUsuario.textContent = 'Por favor, ingrese su nombre de usuario.';
+    valid = false;
+  } else if (!/^[a-zA-Z0-9_]{3,20}$/.test(nombreUsuario.value)) {
+    errorNombreUsuario.textContent = 'El nombre de usuario debe tener entre 3 y 20 caracteres y solo puede contener letras, números y guiones bajos.';
+    valid = false;
+  }
+
+  // Validación de la contraseña
+  if (contrasena.value.trim() === '') {
+    errorContrasena.textContent = 'Por favor, ingrese su contraseña.';
+    valid = false;
+  } else if (contrasena.value.length < 6) {
+    errorContrasena.textContent = 'La contraseña debe tener al menos 6 caracteres.';
+    valid = false;
+  }
+
+  // Enviar el formulario si es válido
+  if (valid) {
+    formulario.submit();
+  }
+});
+</script>
 
 </html>
