@@ -46,7 +46,7 @@
             <small class="text-danger" id="error-contrasena"></small>
           </div>
           <!-- Olvidó su contraseña -->
-          <p class="recuperarContraseña"><a href="/recuperarContraseña.html">¿Olvidó su contraseña?</a></p>
+          <p class="recuperarContraseña"><a href="/recuperarClave.html">¿Olvidó su contraseña?</a></p>
           <!-- Botón de inicio de sesió n -->
           <button type="submit" class="btn btn-secondary">Iniciar Sesión</button>
         </form>
@@ -67,7 +67,7 @@
 
   <!-- Opción para Administradores -->
   <div class="text-center mt-4">
-    <p>¿Eres administrador? <a href="admin_login.html" class="text-light">Inicia sesión aquí</a></p>
+    <p>¿Eres administrador? <a href="adminInicioSesion.html" class="text-light">Inicia sesión aquí</a></p>
   </div>
 </div>
 
@@ -156,7 +156,7 @@
 <script>
   const formulario = document.getElementById('formulario-inicio-sesion');
 
-formulario.addEventListener('submit', function(event) {
+  formulario.addEventListener('submit', function(event) {
   event.preventDefault();
   
   const nombreUsuario = document.getElementById('nombre-usuario');
@@ -173,9 +173,6 @@ formulario.addEventListener('submit', function(event) {
   // Validación del nombre de usuario
   if (nombreUsuario.value.trim() === '') {
     errorNombreUsuario.textContent = 'Por favor, ingrese su nombre de usuario.';
-    valid = false;
-  } else if (!/^[a-zA-Z0-9_]{3,20}$/.test(nombreUsuario.value)) {
-    errorNombreUsuario.textContent = 'El nombre de usuario debe tener entre 3 y 20 caracteres y solo puede contener letras, números y guiones bajos.';
     valid = false;
   }
 
