@@ -1,6 +1,6 @@
 /* Set the background color of the entire page to black */
 body {
-    background-image : url(../Imagenes/fondo-1.png);
+    background-image : url(../assets/fondo-1.png);
     background-size:cover;
 }
 
