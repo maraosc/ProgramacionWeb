@@ -1,0 +1,77 @@
+body {
+    background-image: url('../Imagenes/fondo-1.png');
+    background-size: cover;
+  }
+  
+  .card {
+    background-color: #1e1e1e;
+    color: #ffffff;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  }
+  
+  h2, h3 {
+    color: #e6a500;
+  }
+  
+  .form-control {
+    background-color: #333;
+    border: 1px solid #555;
+    color: #000000;
+  }
+  
+  .form-control::placeholder {
+    color: #ffffff;
+  }
+  
+  .form-control:focus {
+    border-color: #e6a500;
+    box-shadow: 0 0 8px rgba(230, 165, 0, 0.8);
+  }
+  
+  .btn-custom {
+    background-color: #e6a500;
+    color: #000;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1.2rem;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+  }
+  
+  .btn-custom:hover {
+    background-color: #d18f00;
+    transform: scale(1.05);
+  }
+  
+  a {
+    color: #e6a500;
+    text-decoration: none;
+  }
+ 
+  .btn-primary {
+    background-color: goldenrod;
+    border-color: goldenrod;
+  }
+
+.btn-primary:hover {
+    background-color: #f0c14b;
+    border-color: #f0c14b;
+  }
+
+  footer .nav-link:hover {
+    color: #ffc107 !important;
+  }
+  footer .bi:hover {
+    color: #ffc107 !important;
+
+  }
+
+  
+  .table thead th {
+    background-color: #495057;
+    color: white;
+  }
+  .table tbody tr:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+  }
