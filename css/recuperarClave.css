@@ -6,3 +6,79 @@ body {
 .navbar-dark .navbar-nav .nav-link:hover {
     color: goldenrod;
   }
+
+.card-custom {
+    background-color: #1e1e1e; 
+    border-radius: 20px;
+    padding: 3rem;
+    color: #fff;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.8);
+    max-width: 1000px;
+  }
+  
+  .card-custom h3 {
+    font-size: 2.2rem;
+    margin-bottom: 1.5rem;
+    color: #ffffff; 
+  }
+  
+  .input-group-text {
+    background-color: #e6a500;
+    color: #000;
+  }
+  
+  .form-control {
+    background-color: #333;
+    border: none;
+    color: #fff;
+  }
+  
+  .form-control::placeholder {
+    color: #bbb;
+  }
+  
+  .form-control:focus {
+    border-color: #e6a500;
+    box-shadow: 0 0 8px rgba(230, 165, 0, 0.8);
+  }
+  
+  .btn-custom {
+    background-color: #e6a500;
+    border: none;
+    color: #000;
+    font-size: 1.2rem;
+    transition: all 0.3s ease;
+  }
+  
+  .btn-custom:hover {
+    background-color: #d18f00;
+    transform: scale(1.05);
+  }
+  
+  a {
+    color: #e6a500;
+    text-decoration: none;
+  }
+  
+  a:hover {
+    text-decoration: underline;
+    color: #d18f00;
+  }
+
+  footer .nav-link:hover {
+    color: #ffc107 !important;
+  }
+  footer .bi:hover {
+    color: #ffc107 !important;
+
+  }
+
+  .btn-primary {
+    background-color: goldenrod;
+    border-color: goldenrod;
+  }
+
+.btn-primary:hover {
+    background-color: #f0c14b;
+    border-color: #f0c14b;
+  }

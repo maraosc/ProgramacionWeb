@@ -10,53 +10,78 @@
     integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" />
   <!-- CSS -->
   <link rel="stylesheet" href="css/adminInicioSesion.css" />
-  <!-- Iconos -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet" />
+    <!-- Iconos -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
 </head>
 
 <body>
-  <!-- Barra navegación -->
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+<!-- Barra navegación -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container-fluid">
       <a href="index.html">
         <img src="/Imagenes/Estim-Hub.svg" alt="Logo" width="90" height="30">
       </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <ul class="navbar-nav">
+          <!-- Cuenta con icono y desplegable -->
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarCuenta" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              <i class="fas fa-user"></i> Cuenta
+            </a>
+            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarCuenta">
+              <li><a class="dropdown-item" href="mi-cuenta.html"><i class="fas fa-user-circle"></i> Mi Cuenta</a></li>
+              <li><a class="dropdown-item" href="InicioSesion.html"><i class="fas fa-sign-in-alt"></i> Iniciar sesión</a></li>
+              <li><a class="dropdown-item" href="registro.html"><i class="fas fa-user-plus"></i> Registrarse</a></li>
+            </ul>
+          </li>
+          <!-- Carrito de compras con icono -->
+          <li class="nav-item">
+            <a class="nav-link" href="carrito.html">
+              <i class="fas fa-shopping-cart"></i> Carrito
+            </a>
+          </li>
+        </ul>
+      </div>
     </div>
   </nav>
 
 
-  <!-- Contenido Principal -->
-  <div class="container my-5 bg-dark text-light p-4 rounded container-principal">
-    <h2 class="mb-2">ADMIN</h2>
-    <hr class="border-light" />
-    <p class="text-center">
-        <span>Si es administrador, inicie sesión con su nombre de usuario y contraseña.</span>
+<!-- Contenido Principal -->
+<div class="container d-flex justify-content-center align-items-center" style="min-height: 100vh;">
+    <div class="card bg-dark text-light p-4 rounded shadow-lg" style="max-width: 800px; width: 100%;">
+      <h2 class="mb-3 text-center">ADMIN</h2>
+      <span class="text-center">Si es administrador, inicie sesión con su nombre de usuario y contraseña.</span>
+      <hr class="border-light" />
+      <p class="text-center">
+        <br>
         <span> Si es cliente, haga clic <a class="inicio-sesion-cliente" href="/InicioSesion.html">aquí</a> para acceder.</span>
-      </p>
-      
-    
-    <form id="formulario-inicio-sesion" novalidate>
-      <div class="row justify-content-center">
-        <div class="col-md-6 col-lg-8">
-          <!-- Nombre de usuario -->
-          <div class="mb-3">
-            <label for="nombre-usuario" class="form-label">Nombre de usuario</label>
-            <input type="text" class="form-control" id="nombre-usuario" placeholder="Ingrese su nombre de usuario"
-              required />
-            <small class="text-danger" id="error-nombre-usuario"></small>
-          </div>
-          <!-- Contraseña -->
-          <div class="mb-3">
-            <label for="contrasena" class="form-label">Contraseña</label>
-            <input type="password" class="form-control" id="contrasena" placeholder="Ingrese su contraseña" required />
-            <small class="text-danger" id="error-contrasena"></small>
-          </div>
-          <!-- Botón de inicio de sesión -->
-          <button type="submit" class="btn btn-secondary w-100 mb-4">Iniciar Sesión</button>
+    </p>
+  
+      <form id="formulario-inicio-sesion" novalidate>
+        <!-- Nombre de usuario -->
+        <div class="mb-3">
+          <label for="nombre-usuario" class="form-label">Nombre de usuario</label>
+          <input type="text" class="form-control" id="nombre-usuario" placeholder="Ingrese su nombre de usuario" required />
+          <small class="text-danger" id="error-nombre-usuario"></small>
         </div>
-      </div>
-    </form>
-</div>
+        
+        <!-- Contraseña -->
+        <div class="mb-3">
+          <label for="contrasena" class="form-label">Contraseña</label>
+          <input type="password" class="form-control" id="contrasena" placeholder="Ingrese su contraseña" required />
+          <small class="text-danger" id="error-contrasena"></small>
+        </div>
+        
+        <!-- Botón de inicio de sesión -->
+        <button type="submit" class="btn btn-secondary w-100 mb-4">Iniciar Sesión</button>
+      </form>
+    </div>
+  </div>
 
 </body>
 
@@ -168,5 +193,7 @@
       }
     });
   </script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
 </html>

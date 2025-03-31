@@ -46,3 +46,21 @@ background-color: #f0c14b;
     color: #ffffff;
     text-align: center;
   }
+
+  footer .nav-link:hover {
+    color: #ffc107 !important;
+  }
+  footer .bi:hover {
+    color: #ffc107 !important;
+
+  }
+
+  .btn-primary {
+    background-color: goldenrod;
+    border-color: goldenrod;
+  }
+
+.btn-primary:hover {
+    background-color: #f0c14b;
+    border-color: #f0c14b;
+  }
