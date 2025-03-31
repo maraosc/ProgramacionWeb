@@ -14,16 +14,39 @@
 
 <!-- Barra navegación -->
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <div class="container-fluid">
-      <a href="index.html">
-        <img src="/Imagenes/Estim-Hub.svg" alt="Logo" width="90" height="30">
-      </a>
-      </div>
+  <div class="container-fluid">
+    <a href="index.html">
+      <img src="/Imagenes/Estim-Hub.svg" alt="Logo" width="90" height="30">
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+      <ul class="navbar-nav">
+        <!-- Cuenta con icono y desplegable -->
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarCuenta" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <i class="fas fa-user"></i> Cuenta
+          </a>
+          <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarCuenta">
+            <li><a class="dropdown-item" href="mi-cuenta.html"><i class="fas fa-user-circle"></i> Mi Cuenta</a></li>
+            <li><a class="dropdown-item" href="InicioSesion.html"><i class="fas fa-sign-in-alt"></i> Iniciar sesión</a></li>
+            <li><a class="dropdown-item" href="registro.html"><i class="fas fa-user-plus"></i> Registrarse</a></li>
+          </ul>
+        </li>
+        <!-- Carrito de compras con icono -->
+        <li class="nav-item">
+          <a class="nav-link" href="carrito.html">
+            <i class="fas fa-shopping-cart"></i> Carrito
+          </a>
+        </li>
+      </ul>
     </div>
-  </nav>
+  </div>
+</nav>
 
 <!-- Formulario de inicio de sesión -->
-<div class="container my-5 bg-dark text-light p-4 rounded container-principal">
+<div class="container my-5 bg-dark text-light p-4 rounded">
   <h2 class="mb-4">Inicio Sesión</h2>
   <div class="row">
     <!-- Clientes Registrados -->
