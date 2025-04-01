@@ -1,4 +1,177 @@
-body {
-    background-image : url(../assets/fondo-1.png);
-    background-size:cover;
-}
+/* Reset y configuración base */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #fff;
+    color: #000;
+  }
+  .container {
+    max-width: 1200px;
+    margin: auto;
+  }
+  h1, h2 {
+    margin-bottom: 15px;
+  }
+  
+  /* Estilos para el carrito y secciones */
+  .main-content {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  @media (min-width: 768px) {
+    .main-content {
+      flex-direction: row;
+    }
+    .cart {
+      flex: 2;
+    }
+    .aside {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+  }
+  
+  /* Carrito de productos */
+  .cart-item {
+    display: flex;
+    align-items: center;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 10px;
+    margin-bottom: 10px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    transition: opacity 0.3s ease;
+  }
+  .cart-item img {
+    width: 80px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 4px;
+    margin-right: 20px;
+  }
+  .cart-item-details {
+    flex: 1;
+  }
+  .cart-item-details h3 {
+    font-size: 1.2em;
+    margin-bottom: 8px;
+  }
+  .cart-item-details p {
+    margin-bottom: 5px;
+  }
+  .cart-item-actions {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+  }
+  .cart-item-actions input[type="number"] {
+    width: 60px;
+    padding: 5px;
+    text-align: center;
+  }
+  .btn-remove {
+    background: #E6A500;
+    color: #fff;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+  .btn-remove:hover {
+    background: #d59400;
+  }
+  
+  /* Resumen de Compra */
+  .summary, .shipping-address {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    background: #f9f9f9;
+  }
+  .summary h2, .shipping-address h2 {
+    color: #E6A500;
+  }
+  .summary .summary-item {
+    display: flex;
+    justify-content: space-between;
+    margin: 10px 0;
+  }
+  .summary .total {
+    font-weight: bold;
+    font-size: 1.2em;
+  }
+  
+  /* Dirección de Envío */
+  .address-display {
+    margin-bottom: 10px;
+  }
+  .btn-edit {
+    background: #E6A500;
+    color: #fff;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+  .btn-edit:hover {
+    background: #d59400;
+  }
+  .address-form {
+    display: none;
+    margin-top: 10px;
+  }
+  .address-form input {
+    width: 100%;
+    padding: 8px;
+    margin: 5px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  .address-form button {
+    background: #E6A500;
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    margin-top: 10px;
+  }
+  .address-form button:hover {
+    background: #d59400;
+  }
+  .error {
+    color: red;
+    font-size: 0.9em;
+    margin-top: 5px;
+  }
+  
+
+  .btn-primary {
+    background-color: goldenrod;
+    border-color: goldenrod;
+  }
+
+.btn-primary:hover {
+    background-color: #f0c14b;
+    border-color: #f0c14b;
+  }
+
+  footer .nav-link:hover {
+    color: #ffc107 !important;
+  }
+  footer .bi:hover {
+    color: #ffc107 !important;
+
+  }
