@@ -59,7 +59,7 @@
       <hr class="border-light" />
       <p class="text-center">
         <br>
-        <span> Si es cliente, haga clic <a class="inicio-sesion-cliente" href="InicioSesion.html">aquí</a> para acceder.</span>
+        <span> Si es cliente, haga clic <a class="inicio-sesion-cliente" href="/InicioSesion.html">aquí</a> para acceder.</span>
     </p>
   
       <form id="formulario-inicio-sesion" novalidate>
@@ -173,6 +173,8 @@
 
       // Validar campos
       let valid = true;
+
+      // Validación de Nombre de Usuario
       if (nombreUsuario.value.trim() === '') {
         errorNombreUsuario.textContent = 'Por favor, ingrese su nombre de usuario.';
         valid = false;
@@ -180,16 +182,31 @@
         errorNombreUsuario.textContent = '';
       }
 
-      if (contrasena.value.trim() === '') {
+      // Validación de Contraseña
+      const password = contrasena.value.trim();
+      if (password === '') {
         errorContrasena.textContent = 'Por favor, ingrese su contraseña.';
+        valid = false;
+      } else if (password.length < 8 || password.length > 20) {
+        errorContrasena.textContent = 'La contraseña debe tener entre 8 y 20 caracteres.';
+        valid = false;
+      } else if (!/[!@#$%^&*(),.?":{}|<>]/.test(password)) {
+        errorContrasena.textContent = 'La contraseña debe contener al menos un carácter especial (!@#$%^&*).';
+        valid = false;
+      } else if (!/\d/.test(password)) {
+        errorContrasena.textContent = 'La contraseña debe contener al menos un número.';
+        valid = false;
+      } else if (!/[a-z]/.test(password) || !/[A-Z]/.test(password)) {
+        errorContrasena.textContent = 'La contraseña debe contener al menos una letra mayúscula y una letra minúscula.';
         valid = false;
       } else {
         errorContrasena.textContent = '';
       }
 
-      // Si todos los campos son válidos, enviar el formulario
+      // Si todos los campos son válidos, redirigir a admin.html
       if (valid) {
-        alert('Formulario enviado con éxito!'); 
+        alert('Inicio de sesión exitoso. Redirigiendo a la página de administrador.');
+        window.location.href = 'admin.html';
       }
     });
   </script>

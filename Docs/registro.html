@@ -158,53 +158,86 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
 <script>
-    const form = document.getElementById('formulario-registro');
-    const fields = [
-      'nombre','apellido-paterno','apellido-materno','nombre-usuario',
-      'email','contraseña','confirmar-contraseña','fecha-nacimiento',
-      'region','comuna','direccion'
-    ];
+  const form = document.getElementById('formulario-registro');
+  const fields = [
+    'nombre', 'apellido-paterno', 'apellido-materno', 'nombre-usuario',
+    'email', 'contraseña', 'confirmar-contraseña', 'fecha-nacimiento',
+    'region', 'comuna', 'direccion'
+  ];
+  
+  // Limpiar errores
+  function clearError(id) {
+    const errorEl = document.getElementById(`error-${id}`);
+    if (errorEl) errorEl.innerText = '';
+  }
+  
+  // Limpiar errores input
+  fields.forEach(id => {
+    const el = document.getElementById(id);
+    if (el) el.addEventListener('input', () => clearError(id));
+  });
+  
+  form.addEventListener('submit', function(event) {
+    event.preventDefault();
     
-    // Limpiar errores
-    function clearError(id) {
-      const errorEl = document.getElementById(`error-${id}`);
-      if (errorEl) errorEl.innerText = '';
-    }
+    // Limpiar todos los errores
+    fields.forEach(clearError);
     
-    // Limpiar errores input
-    fields.forEach(id => {
-      const el = document.getElementById(id);
-      if (el) el.addEventListener('input', () => clearError(id));
-    });
-    
-    form.addEventListener('submit', function(event) {
-      event.preventDefault();
-      // Limpiare todos los errores
-      fields.forEach(clearError);
-    
-      // Obtener datos del formulario
-      const data = {};
-      fields.forEach(id => data[id] = document.getElementById(id).value.trim());
-    
-    // Validaciones
-    if (!data.nombre) return document.getElementById('error-nombre').innerText = 'El nombre es obligatorio';
-    if (!data['apellido-paterno']) return document.getElementById('error-apellido-paterno').innerText = 'El apellido paterno es obligatorio';
-    if (!data['apellido-materno']) return document.getElementById('error-apellido-materno').innerText = 'El apellido materno es obligatorio';
-    if (!data['nombre-usuario']) return document.getElementById('error-nombre-usuario').innerText = 'El usuario es obligatorio';
-    if (!data.email) return document.getElementById('error-email').innerText = 'El correo es obligatorio';
-    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(data.email)) return document.getElementById('error-email').innerText = 'El correo no es válido';
-    if (!data.contraseña) return document.getElementById('error-contraseña').innerText = 'La contraseña es obligatoria';
-    if (!data['confirmar-contraseña']) return document.getElementById('error-confirmar-contraseña').innerText = 'Debes confirmar la contraseña';
-    if (data.contraseña !== data['confirmar-contraseña']) return document.getElementById('error-confirmar-contraseña').innerText = 'Las contraseñas no coinciden';
-    if (!data['fecha-nacimiento']) return document.getElementById('error-fecha-nacimiento').innerText = 'La fecha es obligatoria';
-    if (!data.region) return document.getElementById('error-region').innerText = 'La región es obligatoria';
-    if (!data.comuna) return document.getElementById('error-comuna').innerText = 'La comuna es obligatoria';
-    if (!data.direccion) return document.getElementById('error-direccion').innerText = 'La dirección es obligatoria';
+    // Obtener datos del formulario
+    const data = {};
+    fields.forEach(id => data[id] = document.getElementById(id).value.trim());
 
-    alert('¡Formulario enviado correctamente!');
-    form.submit();
-    });
-    </script>
+    let valid = true;
+
+    // Función para mostrar errores
+    function showError(id, message) {
+      document.getElementById(`error-${id}`).innerText = message;
+      valid = false;
+    }
+
+    // Validaciones
+    if (!data.nombre) showError('nombre', 'El nombre es obligatorio');
+    if (!data['apellido-paterno']) showError('apellido-paterno', 'El apellido paterno es obligatorio');
+    if (!data['apellido-materno']) showError('apellido-materno', 'El apellido materno es obligatorio');
+    if (!data['nombre-usuario']) showError('nombre-usuario', 'El usuario es obligatorio');
+
+    // Validación de correo
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!data.email) showError('email', 'El correo es obligatorio');
+    else if (!emailRegex.test(data.email)) showError('email', 'El correo no es válido');
+
+    // Validación de contraseña
+    if (!data.contraseña) {
+      showError('contraseña', 'La contraseña es obligatoria');
+    } else {
+      if (data.contraseña.length < 8 || data.contraseña.length > 20) {
+        showError('contraseña', 'La contraseña debe tener entre 8 y 20 caracteres');
+      }
+      if (!/[A-Z]/.test(data.contraseña)) showError('contraseña', 'Debe contener al menos una letra mayúscula');
+      if (!/[a-z]/.test(data.contraseña)) showError('contraseña', 'Debe contener al menos una letra minúscula');
+      if (!/\d/.test(data.contraseña)) showError('contraseña', 'Debe contener al menos un número');
+      if (!/[!@#$%^&*(),.?":{}|<>]/.test(data.contraseña)) showError('contraseña', 'Debe contener al menos un carácter especial (!@#$%^&*)');
+    }
+
+    if (!data['confirmar-contraseña']) {
+      showError('confirmar-contraseña', 'Debes confirmar la contraseña');
+    } else if (data.contraseña !== data['confirmar-contraseña']) {
+      showError('confirmar-contraseña', 'Las contraseñas no coinciden');
+    }
+
+    // Validaciones restantes
+    if (!data['fecha-nacimiento']) showError('fecha-nacimiento', 'La fecha de nacimiento es obligatoria');
+    if (!data.region) showError('region', 'La región es obligatoria');
+    if (!data.comuna) showError('comuna', 'La comuna es obligatoria');
+    if (!data.direccion) showError('direccion', 'La dirección es obligatoria');
+
+    if (valid) {
+      alert('¡Formulario enviado correctamente!');
+      form.submit();
+    }
+  });
+</script>
+
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>

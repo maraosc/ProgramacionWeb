@@ -180,39 +180,53 @@
   const formulario = document.getElementById('formulario-inicio-sesion');
 
   formulario.addEventListener('submit', function(event) {
-  event.preventDefault();
-  
-  const nombreUsuario = document.getElementById('nombre-usuario');
-  const contrasena = document.getElementById('contrasena');
-  const errorNombreUsuario = document.getElementById('error-nombre-usuario');
-  const errorContrasena = document.getElementById('error-contrasena');
+    event.preventDefault();
+    
+    const nombreUsuario = document.getElementById('nombre-usuario');
+    const contrasena = document.getElementById('contrasena');
+    const errorNombreUsuario = document.getElementById('error-nombre-usuario');
+    const errorContrasena = document.getElementById('error-contrasena');
 
-  // Resetear mensajes de error
-  errorNombreUsuario.textContent = '';
-  errorContrasena.textContent = '';
+    // Resetear mensajes de error
+    errorNombreUsuario.textContent = '';
+    errorContrasena.textContent = '';
 
-  let valid = true;
+    let valid = true;
 
-  // Validación del nombre de usuario
-  if (nombreUsuario.value.trim() === '') {
-    errorNombreUsuario.textContent = 'Por favor, ingrese su nombre de usuario.';
-    valid = false;
-  }
+    // Validación del nombre de usuario
+    if (nombreUsuario.value.trim() === '') {
+      errorNombreUsuario.textContent = 'Por favor, ingrese su nombre de usuario.';
+      valid = false;
+    }
 
-  // Validación de la contraseña
-  if (contrasena.value.trim() === '') {
-    errorContrasena.textContent = 'Por favor, ingrese su contraseña.';
-    valid = false;
-  } else if (contrasena.value.length < 6) {
-    errorContrasena.textContent = 'La contraseña debe tener al menos 6 caracteres.';
-    valid = false;
-  }
+    // Validación de la contraseña
+    const password = contrasena.value.trim();
+    if (password === '') {
+      errorContrasena.textContent = 'Por favor, ingrese su contraseña.';
+      valid = false;
+    } else if (password.length < 8 || password.length > 20) {
+      errorContrasena.textContent = 'La contraseña debe tener entre 8 y 20 caracteres.';
+      valid = false;
+    } else if (!/[A-Z]/.test(password)) {
+      errorContrasena.textContent = 'La contraseña debe contener al menos una letra mayúscula.';
+      valid = false;
+    } else if (!/[a-z]/.test(password)) {
+      errorContrasena.textContent = 'La contraseña debe contener al menos una letra minúscula.';
+      valid = false;
+    } else if (!/\d/.test(password)) {
+      errorContrasena.textContent = 'La contraseña debe contener al menos un número.';
+      valid = false;
+    } else if (!/[!@#$%^&*(),.?":{}|<>]/.test(password)) {
+      errorContrasena.textContent = 'La contraseña debe contener al menos un carácter especial (!@#$%^&*).';
+      valid = false;
+    }
 
-  // Enviar el formulario si es válido
-  if (valid) {
-    formulario.submit();
-  }
-});
+    // Enviar el formulario si es válido
+    if (valid) {
+      formulario.submit();
+      alert('Inicio de sesión exitoso.');
+    }
+  });
 </script>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
